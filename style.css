@@ -95,7 +95,7 @@ section{
 
 .main-home::before,
 .main-home::after {
-    content: "";
+    content:"";
     position: absolute;
     top: 0;
     left: 0;
@@ -104,9 +104,11 @@ section{
     background-position: center;
     background-size: cover;
     opacity: 0;
-    animation: fadeInOut 20s infinite;
-    transition: opacity 1s ease-in-out;
+    animation: fadeInOut 12s infinite;
+    animation-timing-function: ease-in-out;
+    transition: opacity 2s ease-in-out;
     z-index: -1; 
+    
     
 }
 
@@ -117,21 +119,27 @@ section{
 
 .main-home::after {
     background-image: url('banner2.png');
-    animation-delay: 6s;
+    animation-delay: 10s;
+
 }
 
 @keyframes fadeInOut {
-    0%, 40% {
+    0%, 20% {
         opacity: 1; 
     }
-    50%, 90% {
+    40% {
+        opacity: 1; 
+    }
+    50% {
         opacity: 0; 
     }
-    100% {
+    70% {
+        opacity: 0; 
+    }
+    90%, 100% {
         opacity: 1; 
     }
 }
-
 
 
 .main-home h5{
@@ -209,7 +217,7 @@ header.sticky {
 
 .logo.sticky {
     transform: translateX(100px); 
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-in-out;
 }
 
 header.sticky .nvmenu {
@@ -244,6 +252,75 @@ header.sticky .nv-icon {
     gap: 2rem;
 }
 
+.btn {
+    padding: 15px 45px;
+    border: 1px solid #fff;
+    border-radius: 0.5em;
+    display: inline-block;
+    margin-top: 2em;
+    background-color: transparent;
+    font-weight: 700;
+    transition: .3s;
+}
+.btn:hover {
+    background-color: #fff;
+    color: #222;
+}
+.popup {
+    position: fixed;
+    padding: 10px;
+    max-width: 500px;
+    border-radius: 0.5em;
+    top: 50%;
+    left: 50%;
+    color: #000;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 1);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s, visibility 0s linear .5s;
+    z-index: 2; /* Higher than the backdrop */
+}
+.popup:target {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+.popup .close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding: 5px;
+    color: #000;
+    transition: color .3s;
+    font-size: 2em;
+    line-height: 1.5;
+    font-weight: 700;
+}
+.popup .close:hover {
+    color: #f00;
+}
+.close-popup {
+    background-color: rgba(0, 0, 0, .7);
+    cursor: default;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility 0s linear .5s;
+    z-index: 1;
+}
+.popup:target + .close-popup {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+
+ 
 .row{
     position:relative;
     transition: all .40s;
@@ -449,33 +526,55 @@ header.sticky .nv-icon {
 }
 
 
-@media (max-width:890px) {
-    header{
-        padding:20px 3%;
-        transition: .4s;
+/* Adjusts header padding and adds a trans ition effect */
+@media (max-width: 890px) {
+    header {
+        padding: 20px 3%;
+        transition: 0.4s;
     }
+
+    .main-home img {
+        width: 100%; 
+        height: auto; 
+        object-fit: contain; 
+    }
+
+    .logo.sticky{
+        transform: translateX(60px);   
+    }
+
+    header.sticky .nvmenu{
+        transform: translateX(80px);
+    }
+
+    header.sticky .nv-icon{
+        transform: translateX(100px);
+    }
+
+
 }
 
-@media (maxwidth:630px) {
-
-    .main-text h1{
+/* For screens smaller than 630px */
+@media (max-width: 630px) {
+    .main-text h1 {
         font-size: 50px;
-        transition: .4s;
+        transition: 0.4s;
     }
 
-    .main-text p{
+    .main-text p {
         font-size: 18px;
-        transition: .4s;
+        transition: 0.4s;
     }
-    .main-btn{
-        padding:  10px 20px;
-        transition: .4s;
+
+    .main-btn {
+        padding: 10px 20px;
+        transition: 0.4s;
     }
-    
 }
 
-@media(max-width:750px){
-    .nvmenu{
+/* For screens smaller than 750px */
+@media (max-width: 750px) {
+    .nvmenu {
         position: absolute;
         top: 100%;
         right: -100%;
@@ -486,7 +585,7 @@ header.sticky .nv-icon {
         flex-direction: column;
         align-items: center;
         padding: 120px 30px;
-        transition: .4s;
+        transition: 0.4s;
     }
 }
 
