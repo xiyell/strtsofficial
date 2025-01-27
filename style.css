@@ -113,12 +113,12 @@ section{
 }
 
 .main-home::before {
-    background-image: url('banner1.png');
+    background-image: url(img/banner1.png);
     animation-delay: 0s;
 }
 
 .main-home::after {
-    background-image: url('banner2.png');
+    background-image:url(img/banner2.png);
     animation-delay: 10s;
 
 }
@@ -417,6 +417,21 @@ header.sticky .nv-icon {
     margin-bottom: 2px;
 }
 
+.update .cart img {
+    width: 300px; /* Example size */
+    height: 300px;
+    margin-top: 50px;
+    margin-left: 4%;
+    object-fit: cover;
+}
+
+.update .texts{
+    text-align: center;
+}
+
+.update .text p{
+    text-align: center;
+}
 
 .update h2{
     text-align: center;
@@ -446,13 +461,6 @@ header.sticky .nv-icon {
     font-weight: 500;
 }
 
-.cart p{
-    color: grey;
-    font-size: 15px;
-    max-width: 380px;
-    line-height: 25px;
-    margin-bottom: 12px;
-}
 
 .cart h6{
     color: black;
@@ -525,11 +533,20 @@ header.sticky .nv-icon {
     text-transform: capitalize;
 }
 
+.about-page .nvmenu.open{
+    right: 0;
+}
+.about-page {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    height: 100vh; 
+    padding-top: 2%; 
+}
 
-/* Adjusts header padding and adds a trans ition effect */
-@media (max-width: 890px) {
+@media (max-width: 920px) {
     header {
-        padding: 20px 3%;
+        padding:20px 3%;
         transition: 0.4s;
     }
 
@@ -540,7 +557,7 @@ header.sticky .nv-icon {
     }
 
     .logo.sticky{
-        transform: translateX(60px);   
+        transform: translateX(30px);   
     }
 
     header.sticky .nvmenu{
@@ -548,13 +565,22 @@ header.sticky .nv-icon {
     }
 
     header.sticky .nv-icon{
-        transform: translateX(100px);
+        transform: translateX(90px);
     }
+
+    .update .cart img{
+        align-items: center;
+        margin-top: 0%;
+
+    }
+    .about-page{
+        padding-top:15%;
+    }
+
 
 
 }
 
-/* For screens smaller than 630px */
 @media (max-width: 630px) {
     .main-text h1 {
         font-size: 50px;
@@ -570,9 +596,19 @@ header.sticky .nv-icon {
         padding: 10px 20px;
         transition: 0.4s;
     }
+    .update .cart img{
+        display: block;
+        align-items: center;
+        margin-top: 0%;
+    }
+    .about-page{
+        padding-top:30%;
+    }
+
+
+
 }
 
-/* For screens smaller than 750px */
 @media (max-width: 750px) {
     .nvmenu {
         position: absolute;
@@ -587,6 +623,21 @@ header.sticky .nv-icon {
         padding: 120px 30px;
         transition: 0.4s;
     }
+    .update .cart img{
+        align-items: center;
+        margin-top: 0%;
+    }
+ 
+    .about-page{
+        padding-top: 15%;
+        text-align: center;
+        align-items: center;
+    }
+    .update .cart img{
+        align-items: center;
+        margin-top: 0%;
+        margin-left: 15%;
+    }
 }
 
 .nvmenu a{
@@ -594,6 +645,3 @@ header.sticky .nv-icon {
     margin: 18px 0;
 }
 
-.nvmenu.open{
-    right: 0;
-}

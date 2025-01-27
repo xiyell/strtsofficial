@@ -1,0 +1,26 @@
+# Project Title
+strt — Fits for Streets
+
+## Description
+A fashion e-commerce website that offers a curated selection of streetwear clothing and accessories.
+
+## Features
+- Responsive design
+- Size guide for various apparel
+- Interactive elements (sticky header, dropdown menu)
+
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
+
+## Installation Instructions
+1. Clone the repository.
+2. Open `index.html` in a web browser.
+
+## Usage
+- Navigate through the website using the menu.
+- Check the size guide for fitting information.
+
+## Contact Information
+For inquiries, reach out to: 4thestreets@gmail.com
